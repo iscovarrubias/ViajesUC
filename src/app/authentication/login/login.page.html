@@ -1,0 +1,21 @@
+<ion-content class="ion-padding">
+  <ion-grid class="wrapper">
+    <ion-row>
+      <ion-img class="logo" src="../../../assets/img/logo/LOGOVIAJESUC (220 x 110 mm) (110 x 50 mm) -svg.svg" alt=""></ion-img>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <ion-row class="ion-justify-content-center ion-align-items-center">
+          <ion-input class="input-login" label="Correo electrónico" label-placement="floating" type="email" formControlName="email"
+            [clearInput]="true" errorText="Correo inválido"></ion-input>
+          <ion-input class="input-login" label="Contraseña" label-placement="floating" type="password" formControlName="password"
+            [clearInput]="true" errorText="Contraseña inválida"></ion-input>
+        </ion-row>
+        <ion-row class="router-wrapper ion-justify-content-center ion-align-items-center">
+          <ion-button type="submit" classtype="submit" class="button-form"> Ingresar </ion-button>
+          <a routerLink='/reset'> Olvidé mi contraseña</a>
+        </ion-row>
+      </form>
+    </ion-row>
+  </ion-grid>
+</ion-content>

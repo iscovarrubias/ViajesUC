@@ -1,0 +1,28 @@
+.duocFooter {
+  --background:#0C243C;
+  --color:#b5b5b5;
+}
+
+.qr-display {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-container .qr-button {
+  width: 18rem;
+  background-color: #0C243C;
+  color: white;
+}
+
+ion-content {
+  display: flex;
+  flex-direction: column;
+}

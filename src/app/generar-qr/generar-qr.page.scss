@@ -1,0 +1,53 @@
+.duocFooter{
+    --background:#0C243C;
+    --color:#b5b5b5;
+    
+}
+
+ion-toolbar {
+  --background: #0c243c;
+  --color: white;
+  text-align: center;
+}
+
+.qr-display {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+  }
+  
+  .flex-container {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    
+    .qr-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #3880ff;
+      color: white;
+      border-radius: 4px;
+      margin-top: 20px;
+    }
+    
+    .flex-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    ion-footer {
+      background-color: #f1f1f1;
+    }
+  }    
+  
+  ion-content {
+    display: flex;
+    flex-direction: column; 
+  }
+
+  

@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>VIAJES UC</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-menu side="end" menuId="first" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menú</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <div id="image-placeholder">
+        <img src="../../assets/img/placeholder/profile-placeholder.png" alt="Descripción de la imagen">
+      </div>
+      <div *ngIf="detallePerfil">
+        <ion-title class="ion-text-center">{{ detallePerfil.username }}</ion-title>
+        <p class="ion-text-center">{{ detallePerfil.tipo_usuario }}</p>
+      </div>
+      <ion-item (click)="onLogout()">
+        <ion-icon aria-hidden="true" name="power" slot="start"></ion-icon>
+        <ion-label>Cerrar Sesión</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-content id="main-content">
+  <ion-grid class="wrapper">
+    <ion-row>
+      <ion-col size="12">
+        <div id="map" class="map-container"></div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-margin-top" *ngIf="detallePerfil && detallePerfil.tipo_usuario?.toLowerCase() === 'estudiante'">
+      <ion-col size="6">
+        <ion-item>
+          <ion-label>Desde</ion-label>
+          <ion-select [(ngModel)]="selectedDesde" placeholder="Seleccionar ubicación">
+            <ion-select-option *ngFor="let sede of sedes" [value]="sede.nombre">Sede: {{ sede.nombre }}</ion-select-option>
+            <ion-select-option value="Viña">Ubicación: Plaza Vergara, Arlegui 687, Viña del Mar</ion-select-option>
+            <ion-select-option value="Valparaíso">Ubicación: Plaza O'Higgins, Pedro Montt 2113, Valparaíso</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-item>
+          <ion-label>Hasta</ion-label>
+          <ion-select [(ngModel)]="selectedHasta" placeholder="Seleccionar ubicación">
+            <ion-select-option *ngFor="let sede of sedes" [value]="sede.nombre">Sede: {{ sede.nombre }}</ion-select-option>
+            <ion-select-option value="Viña">Ubicación: Plaza Vergara, Arlegui 687, Viña del Mar</ion-select-option>
+            <ion-select-option value="Valparaíso">Ubicación: Plaza O'Higgins, Pedro Montt 2113, Valparaíso</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-margin-top" *ngIf="detallePerfil && detallePerfil.tipo_usuario?.toLowerCase() === 'chofer'">
+      <ion-col size="12">
+        <ion-item>
+          <ion-label>Selecciona un viaje</ion-label>
+          <ion-select [(ngModel)]="selectedViaje" placeholder="Seleccionar viaje">
+            <ion-select-option *ngFor="let viaje of viajes" [value]="viaje">
+              {{ viaje.origen }} - {{ viaje.destino }} ({{ viaje.hora }})
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-margin-top">
+      <ion-col size="12">
+        <ion-button expand="full" (click)="confirmarViaje()">Confirmar Viaje</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-margin-top">
+      <ion-col size="12">
+        <ion-text *ngIf="driverStatus">
+          <h3>{{ driverStatus }}</h3>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar class="duocFooter" slot="bottom">
+        <ion-tab-button routerLink="/qr">
+          <ion-icon name="qr-code-outline"></ion-icon>
+          Generar QR
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
