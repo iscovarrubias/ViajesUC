@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Restablecer contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid class="wrapper">
+    <ion-row>
+      <ion-img class="logo" src="../../../assets/img/logo/VIAJESUC (220 x 110 mm) (110 x 50 mm)-svg.svg"
+        alt="Logo"></ion-img>>
+    </ion-row>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <form class="form-wrapper" [formGroup]="resetForm" (ngSubmit)="onReset()">
+        <ion-text class="ion-text-center">Ingresa tu correo electrónico para restablecer tu contraseña</ion-text>
+        <ion-input class="input-reset" label="Correo electrónico" label-placement="floating" type="email"
+          formControlName="email" [clearInput]="true" errorText="Correo inválido"></ion-input>
+        <ion-button type="submit" classtype="submit" class="button-form"> Restablecer contraseña </ion-button>
+      </form>
+    </ion-row>
+  </ion-grid>
+</ion-content>

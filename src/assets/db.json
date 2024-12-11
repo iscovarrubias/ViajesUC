@@ -1,0 +1,57 @@
+{
+  "usuario": [
+    {
+      "id": 1,
+      "username": "user1@duocuc.cl",
+      "password": "password123",
+      "tipo_usuario": "Estudiante",
+      "ubicacion_actual": {
+        "latitud": -33.45694,
+        "longitud": -70.64827
+      },
+      "sede_destino": ["Sede Viña del Mar", "Sede Valparaíso"]
+    },
+    {
+      "id": 2,
+      "username": "user2@duocuc.cl",
+      "password": "password123",
+      "tipo_usuario": "Chofer",
+      "vehiculo": "Toyota Corolla",
+      "placa_vehiculo": "ABC123",
+      "sede_asociada": "Sede Viña del Mar",
+      "ubicacion_actual": {
+        "latitud": -33.04278,
+        "longitud": -71.61268
+      }
+    }
+  ],
+  "sede": [
+    {
+      "id": 1,
+      "nombre": "Sede Viña del Mar",
+      "direccion": "Álvarez 2336, 2571188 Viña del Mar, Valparaíso",
+      "ubicacion": {
+        "latitud": -33.02268,
+        "longitud": -71.55158
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "Sede Valparaíso",
+      "direccion": "Brasil 2021, Valparaíso",
+      "ubicacion": {
+        "latitud": -33.04612,
+        "longitud": -71.61268
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "Sede Valparaíso - Cousiño",
+      "direccion": "Álvarez 2336, 2571188 Viña del Mar, Valparaíso",
+      "ubicacion": {
+        "latitud": -33.02268,
+        "longitud": -71.55158
+      }
+    }
+  ]
+}

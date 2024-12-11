@@ -19,3 +19,10 @@ packages/
 *.zip
 *.tar
 *.gz
+*.apk
+*.json
+angular.json
+package-lock.json
+package.json
+tsconfig.json
+www/

@@ -1,0 +1,22 @@
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.form-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 2.5rem;
+  width: 85%;
+}
+
+.button-form {
+  width: 80%;
+  --background: #ffc107;
+}

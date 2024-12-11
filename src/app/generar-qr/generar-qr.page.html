@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ENSEÑALE EL QR AL CONDUCTOR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="qr-display ion-text-center">
+    <div class="qrcodeImage" *ngIf="!qrCodeValue">
+        <img src="../../../../assets/img/logo.png" alt="QR Placeholder">
+    </div>
+    <div class="qrcodeImage" *ngIf="qrCodeValue">
+        <qrcode
+            [qrdata]="qrCodeValue"
+            [allowEmptyString]="true"
+            [ariaLabel]="'QR Code image with the following content...'"
+            [cssClass]="'center'"
+            [colorDark]="'#1c255b'"
+            [colorLight]="'#ffffffff'"
+            [elementType]="'canvas'"
+            [errorCorrectionLevel]="'M'"
+            [margin]="4"
+            [scale]="1"
+            [title]="'A custom title attribute'"
+            [width]="300"
+        ></qrcode>
+    </div>
+  </div>
+
+  <div class="flex-container">
+    <ion-button (click)="generateQRCode()" class="qr-button">Generar QR</ion-button>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar class="duocFooter" slot="bottom">
+        <ion-tab-button (click)="goBack()">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+          Regresar
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
