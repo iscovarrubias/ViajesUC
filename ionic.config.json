@@ -1,0 +1,10 @@
+{
+  "name": "ViajesUC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "serve": {
+    "port": 3000
+  }
+}

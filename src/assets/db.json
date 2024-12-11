@@ -46,7 +46,11 @@
     },
     {
       "id": 3,
+<<<<<<< HEAD
       "nombre": "Sede Valparaíso - Cousiño",
+=======
+      "nombre": "Sede Valparaíso - Causiño",
+>>>>>>> 1f50b2bb77b2952a665d6ca5c66597f7ec058f47
       "direccion": "Álvarez 2336, 2571188 Viña del Mar, Valparaíso",
       "ubicacion": {
         "latitud": -33.02268,
